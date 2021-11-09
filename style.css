@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-weight: bold;
+
+  cursor: url(images/racket11.png), auto; 
+}
+
+*:active {
+ 
+
+  cursor: url(images/racket22.png), auto; 
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.tennisball {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100px;
+  height: 100px;
+  z-index: 99;
+}
+
+.tennisball img {
+  width: 100px;
+  height: 100px;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 5s linear infinite;
+  -moz-animation: rotating 5s linear infinite;
+  -ms-animation: rotating 5s linear infinite;
+  -o-animation: rotating 5s linear infinite;
+  animation: rotating 5s linear infinite;
+}
+
+.pwOverlay {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 100;
+}
+
+.pwText {
+  margin-bottom: 50px;
+}
+
+input {
+  height: 30px;
+  width: 200px;
+}
+
+.inputContainer {
+  margin-bottom: 50px;
+}
+
+.banner {
+  display: none;
+  align-items: center;
+
+  position: absolute;
+  height: 10vh;
+  width: 100%;
+  background-color: transparent;
+  z-index:99;
+}
+
+.bannerTop {
+  top: 0;
+}
+
+.bannerBottom {
+  bottom: 0;
+}
+
+.bannerText {
+  position: absolute;
+  height: 100%;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+
+  font-size: 8vh;
+}
+
+.bannerTextBottom {
+  position: absolute;
+  height: 100%;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+
+  font-size: 8vh;
+}
+
+.banner span {
+  height: 100%;
+
+  /* line-height: 100%; */
+  font-size: 8vh;
+  /* margin: ; */
+}
