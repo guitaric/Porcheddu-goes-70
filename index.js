@@ -2,9 +2,7 @@ setInterval(function() {
     var value = parseInt($('.bannerText').css('left')) -2;
     var value2 = parseInt($('.bannerTextBottom').css('left')) +2;
 
-    console.log(value)
-    console.log(value2)
-    // $('.bannerText').css('left', value + 'px');
+
 
     if(value < -800) {
         $('.bannerText').css('left', $(window).width());
@@ -33,8 +31,6 @@ $(document).ready(function () {
   var ballwidth = $('#tennis1').width();
   var ballheight = $('#tennis1').height();
 
-  console.log(ballwidth);
-  console.log(ballheight);
 
   function crazyness() {
     setInterval(function () {
@@ -118,15 +114,71 @@ $(document).ready(function () {
     }, 20);
   }
 
+
+  function beer() {
+    setInterval(function() {
+      $('.ichnusa').toggleClass('wiggle');
+    }, 520);
+  }
+
+
+  function changeColor() {
+
+    setInterval(function() {
+      var color = "#" + Math.random().toString(16).slice(2, 8);
+      $('.seventy').css("color", color);     
+    }, 120);
+
   
-  $('#pwInput').on('input', function () {
-    console.log($(this).val());
-  });
+    // var c = color.substring(1);      // strip #
+    // var rgb = parseInt(c, 16);   // convert rrggbb to decimal
+    // var r = (rgb >> 16) & 0xff;  // extract red
+    // var g = (rgb >>  8) & 0xff;  // extract green
+    // var b = (rgb >>  0) & 0xff;  // extract blue
+  
+    // var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
+    // if (luma < 80) {
+    //     spans.css('color', 'white');
+    // } else {
+    //   spans.css('color', 'black');
+    // }
+  }
+
+
+  function flags() {
+    var sars = [$('#s1'), $('#s2'), $('#s3'), $('#s4'), $('#s5'), $('#s6')];
+
+    // sars.each(function() {
+    //   $(this).hide();
+    // })
+    var sarscount = 0;
+
+    setInterval(function() {
+    
+          for (let i = 0; i < sars.length; i++) {
+            sars[i].hide();
+          }
+
+          sars[sarscount].show();
+
+          sarscount == 5 ? sarscount = 0 : sarscount = sarscount +1;
+
+      
+    }, 200);
+  }
+
+  
+  // $('#pwInput').on('input', function () {
+  //   console.log($(this).val());
+  // });
+  
+
+  
+  // beer();
   
   $('#pwInput').on('keyup', (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      console.log('KKLKLK');
       
       if ($('#pwInput').val() == 'diehandgottes') {
         $('.pwOverlay').hide();
@@ -137,13 +189,28 @@ $(document).ready(function () {
         setTimeout(function() {
           
           $('.tennisball').show();
+          $('.ichnusa').show();
           $('.banner').show();
+          $('.porcheddu').show();
+          $('.seventy').show();
+          // $('.sardinia').show();
           tennisballs();
+          beer();
+          flags();
+          changeColor();
         }, 23000);
         
       }
     }
   });
+
+  // $('.tennisball').show();
+  // $('.ichnusa').show();
+  // $('.banner').show();
+  // $('.porcheddu').show();
+  // tennisballs();
+  // beer();
+  // flags();  
 
 
 
@@ -168,7 +235,6 @@ $(document).ready(function () {
           );
 
           var url = `url(images/img${count}.jpeg)`;
-          console.log(url);
 
           $(`#imgWrapper${count}`).css({
               'width': '300px',
@@ -181,7 +247,8 @@ $(document).ready(function () {
               '-webkit-background-size': 'cover',
               '-moz-background-size': 'cover',
               '-o-background-size': 'cover',
-              'background-size': 'cover'
+              'background-size': 'cover',
+              'z-index': '98'
 
       })
 

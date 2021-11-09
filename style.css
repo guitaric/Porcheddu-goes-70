@@ -20,6 +20,90 @@ body {
   overflow: hidden;
 }
 
+
+.seventy {
+  display: none;
+}
+
+
+.sardinia {
+  display: none;
+  transform: scale(0.7);
+  position: absolute;
+  top: 50%;
+  left:80%;
+  z-index: 101
+}
+
+.seventy {
+  font-size: 160px;
+  font-family: sans-serif;
+
+  z-index: 200;
+
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ichnusa {
+  display: none;
+  z-index: 100;
+}
+
+#ichnusa1 {
+  position: absolute;
+  top: 70%;
+  left: 5%;
+  transform: rotate(-30deg);
+
+}
+
+#ichnusa2 {
+  position: absolute;
+  top: 70%;
+  left: 10%;
+  transform: rotate(-30deg);
+
+}
+
+#ichnusa3 {
+  position: absolute;
+  top: 70%;
+  left: 15%;
+  transform: rotate(-30deg);
+}
+
+
+.porcheddu {
+  display: none;
+  transform: scale(1.5);
+  position: absolute;
+  top: 20%;
+  -webkit-animation: linear infinite;
+  -webkit-animation-name: run;
+  -webkit-animation-duration: 10s;
+  z-index: 100;
+}
+@-webkit-keyframes run {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 100%;    
+  }
+}
+
+
+#ichnusa1.wiggle,
+#ichnusa2.wiggle,
+#ichnusa3.wiggle
+ {
+   transform: rotate(30deg);
+}
+
 .tennisball {
   display: none;
   position: absolute;
